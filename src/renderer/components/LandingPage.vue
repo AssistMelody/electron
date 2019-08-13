@@ -6,6 +6,7 @@
         <span class="title">
           Welcome to your new project!
         </span>
+        <el-button @click="goto">默认按钮</el-button>
         <system-information></system-information>
       </div>
 
@@ -38,6 +39,9 @@
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      goto(){
+        this.$router.push({path:'/home'})
       }
     }
   }
