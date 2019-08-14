@@ -16,7 +16,7 @@ export default new Router({
       component: require('@/components/HomePage').default
     },
     {
-      path: '',
+      path: '*',
       redirect: '/home'
     }
   ]

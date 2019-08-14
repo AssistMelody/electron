@@ -1,24 +1,44 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+    <div id="app">
+      <el-container class="wapper">
+        <el-header>
+          
+        </el-header>
+        <el-container>
+          <el-aside class="attrWapper" width="180px">
+            <p v-for="(item, index) in Attr" :key="index"><span>{{index|AttrToName}}:</span><span>{{item}}</span></p>
+          </el-aside>
+          <el-container>
+            <el-main>Main</el-main>
+            <el-footer>Footer</el-footer>
+          </el-container>
+        </el-container>
+      </el-container>
+    </div>
 </template>
-
 <script>
-  import { StoneClass } from './class/StoneClass'
-  export default {
-    name: 'my-user',
-    data () {
-      return {
-        base: new StoneClass()
-      }
-    },
-    created () {
-      console.log(this.base)
-    }
-  }
+import { BaseAttrClass } from "./class/BaseClass";
+export default {
+    data() {
+        return {
+            Attr:new BaseAttrClass()
+        }
+    },    
+}
 </script>
-
-<style>
-  /* CSS */
+<style >
+    html,body,#app{
+      height: 100%;
+    }
+    .wapper{
+      height: 100%;
+    }
+    .attrWapper{
+      padding: 0 20px;
+    }
+    .attrWapper p{
+      line-height: 28px;
+      display: flex;
+      justify-content: space-between;
+    }
 </style>
