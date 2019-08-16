@@ -6,11 +6,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import router from './router'
 import store from './store'
-
+import db from './dataBase'
 import { AttrToName } from "./pipe";
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
+Vue.prototype.$db = db
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.filter('AttrToName', AttrToName);
